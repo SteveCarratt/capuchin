@@ -1,11 +1,13 @@
 #![feature(lang_items)]
 #![no_std]
 
+use core::panic::PanicInfo;
+
 #[lang = "eh_personality"]
 extern fn eh_personality() {
 }
 
-#[lang = "panic_handler"]
-extern fn rust_begin_panic() -> {
-    loop {}
+#[panic_handler]
+extern fn panic_handler(info: &PanicInfo) -> ! {
+    loop{}
 }
