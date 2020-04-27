@@ -20,7 +20,7 @@ target/os.iso: target/kernel.bin src/asm/grub.cfg
 	grub-mkrescue -o target/os.iso target/isofiles
 
 run: target/os.iso
-	qemu-system-x86_64 -cdrom build/os.iso
+	qemu-system-x86_64 -cdrom target/os.iso
 
 build: target/kernel.bin
 
