@@ -1,3 +1,4 @@
+extern kmain
 global start
 
 section .text
@@ -56,8 +57,8 @@ start:
     mov ds, ax
     mov es, ax
 
-    ; long jump to long_mode_start setting 'cs' register to 'gdt64.code'
-    jmp gdt64.code:long_mode_start
+    ; long jump to kmain setting 'cs' register to 'gdt64.code'
+    jmp gdt64.code:kmain
 
     hlt
 
